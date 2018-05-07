@@ -1,3 +1,6 @@
+## Demo
+- [https://my-favorite-listings.herokuapp.com/](https://my-favorite-listings.herokuapp.com/)
+
 ## Prerequisites
 - Node.js v8.0+
 
@@ -12,7 +15,7 @@ npm run dev
 npm test
 ```
 
-## Run the application in production mode
+## Run in production mode
 ```sh
 npm start
 ```
@@ -22,5 +25,6 @@ npm start
 - Redux
 - React-Router
 - Styled Components
+- Bootstrap
 - Jest
 - Enzyme
