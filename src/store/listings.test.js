@@ -74,8 +74,21 @@ describe('reducer', () => {
       type: SAVE_LISTING,
       id: 1
     })
-    expect(state.results).toEqual([{ id: 2 }])
+    expect(state.results).toEqual([{ id: 1 }, { id: 2 }])
     expect(state.saved).toEqual([{ id: 3 }, { id: 1 }])
+  })
+
+  it('should not save listing if already saved', () => {
+    const existingState = {
+      results: [{ id: 1 }, { id: 2 }],
+      saved: [{ id: 3 }]
+    }
+    const state = reducer(existingState, {
+      type: SAVE_LISTING,
+      id: 3
+    })
+    expect(state.results).toEqual([{ id: 1 }, { id: 2 }])
+    expect(state.saved).toEqual([{ id: 3 }])
   })
 
   it('should handle UNSAVE_LISTING action type', () => {
@@ -87,7 +100,7 @@ describe('reducer', () => {
       type: UNSAVE_LISTING,
       id: 3
     })
-    expect(state.results).toEqual([{ id: 1 }, { id: 2 }, { id: 3 }])
+    expect(state.results).toEqual([{ id: 1 }, { id: 2 }])
     expect(state.saved).toEqual([])
   })
 })
