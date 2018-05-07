@@ -12,7 +12,7 @@ export default () => {
 const HeaderContainer = styled.div`
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  padding: 0 0 0 20%;
+  padding: 0 0 0 10%;
 
   @media (max-width: 768px) {
     padding: 0;

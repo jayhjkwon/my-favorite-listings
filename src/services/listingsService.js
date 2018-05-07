@@ -3,7 +3,6 @@ import { mockedListings } from './mockedListings'
 class ListingsService {
   async fetchListings() {
     try {
-
       // just use mocked data
       return mockedListings
 

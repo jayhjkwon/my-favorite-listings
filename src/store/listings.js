@@ -54,15 +54,15 @@ export const reducer = (state = initialState, action) => {
 
     case SAVE_LISTING: {
       // check if the listing is already saved
-      if (state.saved.filter(listing => listing.id == action.id).length >= 1) {
+      if (state.saved.filter(listing => listing.id === action.id).length >= 1) {
         return {
           ...state
-        }  
+        }
       }
 
       const newSavedListings = [
         ...state.saved,
-        ...state.results.filter(listing => listing.id == action.id)
+        ...state.results.filter(listing => listing.id === action.id)
       ]
 
       return {
@@ -73,7 +73,7 @@ export const reducer = (state = initialState, action) => {
 
     case UNSAVE_LISTING: {
       const newSavedListings = state.saved.filter(
-        listing => listing.id != action.id
+        listing => listing.id !== action.id
       )
 
       return {
